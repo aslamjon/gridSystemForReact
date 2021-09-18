@@ -6,78 +6,78 @@ const ColStyled = styled.div`
     width: 100%;
     padding-right: 15px;
     padding-left: 15px;
-    ${({colSm, colMd, colLg}) => {
+    ${({sm, md, lg}) => {
         const col = (col) => {
             return css`
-                ${() => col == 0 && css`
+                ${() => col === 0 && css`
                     flex-basis: 0;
                     flex-grid: 1;
                     max-width: 100%;
                 `}
-                ${() => col == 1 && css`
+                ${() => col === 1 && css`
                     flex: 0 0 8.333333%;
                     max-width: 8.333333%;
                 `}
-                ${() => col == 2 && css`
+                ${() => col === 2 && css`
                     flex: 0 0 16.666667%;
                     max-width: 16.666667%;
                 `}
-                ${() => col == 3 && css`
+                ${() => col === 3 && css`
                     flex: 0 0 25%;
                     max-width: 25%;
                 `}
-                ${() => col == 4 && css`
+                ${() => col === 4 && css`
                     flex: 0 0 33.333333%;
                     max-width: 33.333333%;
                 `}
-                ${() => col == 5 && css`
+                ${() => col === 5 && css`
                     flex: 0 0 41.666667%;
                     max-width: 41.666667%;
                 `}
-                ${() => col == 6 && css`
+                ${() => col === 6 && css`
                     flex: 0 0 50%;
                     max-width: 50%;
                 `}
-                ${() => col == 7 && css`
+                ${() => col === 7 && css`
                     flex: 0 0 58.333333%;
                     max-width: 58.333333%;
                 `}
-                ${() => col == 8 && css`
+                ${() => col === 8 && css`
                     flex: 0 0 66.666667%;
                     max-width: 66.666667%;
                 `}
-                ${() => col == 9 && css`
+                ${() => col === 9 && css`
                     flex: 0 0 75%;
                     max-width: 75%;
                 `}
-                ${() => col == 10 && css`
+                ${() => col === 10 && css`
                     flex: 0 0 83.333333%;
                     max-width: 83.333333%;
                 `}
-                ${() => col == 11 && css`
+                ${() => col === 11 && css`
                     flex: 0 0 91.666667%;
                     max-width: 91.666667%;
                 `}
-                ${() => col == 12 && css`
+                ${() => col === 12 && css`
                     flex: 0 0 100%;
                     max-width: 100%;
                 `}
             `
         }
         return css`
-            ${() => colSm && css`
-                @media (min-width: ${() => colSm ? '576' : ''}px) {
-                ${col(colSm)}
+            ${() => sm && css`
+                @media (min-width: ${() => sm ? '576' : ''}px) {
+                ${col(sm)}
                 }
             `}
-            ${() => colMd && css`
-                @media (min-width: ${() => colMd ? '768' : ''}px) {
-                ${col(colMd)}
+            ${() => md && css`
+                @media (min-width: ${() => md ? '768' : ''}px) {
+                ${col(md)}
                 }
             `}
-            ${() => colLg && css`
-                @media (min-width: ${() => colLg ? '992' : ''}px) {
-                ${col(colLg)}
+            ${() => lg && css`
+                @media (min-width: ${() => lg ? '992' : ''}px) {
+                ${col(lg)}
                 }
             `}
         `;
