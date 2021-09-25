@@ -2,6 +2,7 @@ import React from 'react'
 import styled, { css } from 'styled-components';
 
 const StyledRow = styled.div`
+    position: relative;
     width: 100%;
     display: flex;
     flex-direction: ${({ column }) => column ? 'column' : 'row'};
@@ -10,13 +11,20 @@ const StyledRow = styled.div`
     flex-wrap: ${({wrap}) => wrap ? 'wrap' : 'no-wrap'};
     ${({row}) => row && css`
         flex-wrap: wrap;
-        margin-right: -15px;
-        margin-left: -15px;
+        align-items: stretch;
+        /* margin-right: -15px;
+        margin-left: -15px; */
     `};
+    ${({bg}) => bg && css`
+        background: ${bg};
+    `}
+    .dotted {
+        position: absolute;
+    }
 `;
-const Row = (props) => {
+const Row = ({className, ...props}) => {
     return (
-        <StyledRow {...props} />
+        <StyledRow className={className ? className : ''} {...props} />
     )
 }
 
